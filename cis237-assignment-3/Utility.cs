@@ -29,11 +29,6 @@ namespace cis237_assignment_3
             
         }
 
-        public Utility()
-        {
-
-        }
-
 
 
 
@@ -41,6 +36,10 @@ namespace cis237_assignment_3
         // Public Methods
         //VVVVVVVVVVVVVVVVVVVVVVVVVV
 
+        public override string ToString()
+        {
+            return "{ base.ToString() }";
+        }
 
     }
 }

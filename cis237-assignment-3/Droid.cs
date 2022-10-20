@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cis237_assignment_3
 {
-    internal class Droid
+    abstract class Droid : IDroid
     {
         //--------------------------
         // Constants

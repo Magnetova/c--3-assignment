@@ -6,7 +6,7 @@ namespace cis237_assignment_3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }
