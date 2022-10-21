@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace cis237_assignment_3
+﻿namespace cis237_assignment_3
 {
     /// <summary>
     /// You must ensure that your droids are implementing this interface.

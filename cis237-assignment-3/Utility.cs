@@ -1,45 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace cis237_assignment_3
+﻿namespace cis237_assignment_3
 {
     internal class Utility : Droid
     {
         //--------------------------
+        // Constants
+        //VVVVVVVVVVVVVVVVVVVVVVVVVV
+
+        //--------------------------
         // Variables
         //VVVVVVVVVVVVVVVVVVVVVVVVVV
 
-        private bool toolbox;
-        private bool computerConnection;
-        private bool scanner;
-
-
         //--------------------------
-        // Constructors
+        // Properties
         //VVVVVVVVVVVVVVVVVVVVVVVVVV
-
-        public Utility(string Material, string Color, bool ToolBox, bool ComputerConnection, bool Scanner) : base(Material, Color)
-        {
-            this.toolbox = ToolBox;
-            this.computerConnection = ComputerConnection;
-            this.scanner = Scanner;
-            
-        }
-
-
-
 
         //--------------------------
         // Public Methods
         //VVVVVVVVVVVVVVVVVVVVVVVVVV
 
-        public override string ToString()
-        {
-            return "{ base.ToString() }";
-        }
+        //--------------------------
+        // Protected Methods
+        //VVVVVVVVVVVVVVVVVVVVVVVVVV
+
+        //--------------------------
+        // Constructors
+        //VVVVVVVVVVVVVVVVVVVVVVVVVV
 
     }
 }
