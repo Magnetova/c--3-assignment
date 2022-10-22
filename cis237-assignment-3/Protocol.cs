@@ -1,6 +1,7 @@
 ﻿// Cayden Greer
 // CIS 237 - Fall 2022
 // 10-21-2022
+using System;
 
 namespace cis237_assignment_3
 {
@@ -25,7 +26,6 @@ namespace cis237_assignment_3
         {
             this.numberLanguages = NumberLanguages;
         }
-        public Protocol() { }
 
         //Public Methods:
         //  ToString:Return a formatted string containing the variables

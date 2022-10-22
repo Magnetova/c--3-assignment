@@ -4,7 +4,7 @@
 
 namespace cis237_assignment_3
 {
-    internal class Astromech : Utility
+    internal class Astromech
     {
         //Variables: navigation (bool), numberShips (int)
 

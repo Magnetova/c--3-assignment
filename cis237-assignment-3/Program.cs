@@ -24,9 +24,10 @@ namespace cis237_assignment_3
 
 
 
-            UserInterface userInterface = new UserInterface();
+            UserInterface ui = new UserInterface();
             DroidCollection droidCollection = new DroidCollection();
             string choice = "";
+            choice = ui.PrintMenu();
 
 
             while (choice != "3")
@@ -34,12 +35,18 @@ namespace cis237_assignment_3
                 if (choice == "1")
                 {
                     //Add droid
-                    userInterface.AddNewDroid(droidCollection);
+                    ui.AddNewDroid(droidCollection);
                 }
                 if (choice == "2")
                 {
                     //Print List
+                    ui.PrintList(droidCollection);
                 }
+                else if(choice != "1" && choice != "2" && choice != "3")
+                {
+                    System.Console.WriteLine("Invalid Choice.");
+                }
+                choice = ui.PrintMenu();
             }
 
         }

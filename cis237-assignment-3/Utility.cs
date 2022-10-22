@@ -4,7 +4,7 @@
 
 namespace cis237_assignment_3
 {
-    internal class Utility : Droid
+    internal class Utility
     {
         //Variables: toolbox (bool), computerConnection (bool), scanner (bool)
 

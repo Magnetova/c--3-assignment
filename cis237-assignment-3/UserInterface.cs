@@ -9,64 +9,82 @@ namespace cis237_assignment_3
     internal class UserInterface
     {
 
-        public void PrintList()
+        public string PrintMenu()
+        {
+            Console.WriteLine("What would you like to do?");
+            Console.WriteLine("1. Add Droid");
+            Console.WriteLine("2. Print List");
+            Console.WriteLine("3. Exit");
+            
+
+            return Console.ReadLine();
+
+          
+        }
+
+        public void PrintList(DroidCollection droidCollection)
         {
             //Print the list from the concat string
+            Console.WriteLine(droidCollection.CollectionToString());
         }
 
         public void AddNewDroid(DroidCollection droidCollection)
         {
             //Collect user input for droid and pass to droid collection class
             string droidType = "";
-
-            System.Console.WriteLine("What type of droid would you like to add?");
-            System.Console.WriteLine("1. Protocol");
-            System.Console.WriteLine("2. Utility");
-            System.Console.WriteLine("3. Janitor");
-            System.Console.WriteLine("4. Astromech");
+            bool exitchecker = false;
+            Console.WriteLine("What type of droid would you like to add?");
+            Console.WriteLine("1. Protocol");
+            Console.WriteLine("2. Utility");
+            Console.WriteLine("3. Janitor");
+            Console.WriteLine("4. Astromech");
 
             droidType = Console.ReadLine();
 
-            if (droidType == "1")
+            do
             {
-                //create protocol droid
+                if (droidType == "1")
+                {
+                    //create protocol droid
 
-                //get material
-                string material = DroidMaterial();
-                //get color
-                string color = DroidColor();
-                //get number of languages
-                int languages = DroidNumberOfLanguages();
+                    //get material
+                    string material = DroidMaterial();
+                    //get color
+                    string color = DroidColor();
+                    //get number of languages
+                    int languages = DroidNumberOfLanguages();
 
-                droidCollection.AddProtocolDroid(material, color, languages);
-
+                    droidCollection.AddProtocolDroid(material, color, languages);
+                    exitchecker = true;
+                }
+                if (droidType == "2")
+                {
+                    //create Utility droid
+                }
+                if (droidType == "3")
+                {
+                    //create Janitor droid
+                }
+                if (droidType == "4")
+                {
+                    //create Astromech droid
+                }
+                else if (droidType != "1" && droidType != "2" && droidType != "3" && droidType != "4")
+                {
+                    Console.WriteLine("Invalid option.");
+                }
             }
-            if (droidType == "2")
-            {
-                //create Utility droid
-            }
-            if (droidType == "3")
-            {
-                //create Janitor droid
-            }
-            if (droidType == "4")
-            {
-                //create Astromech droid
-            }
-            else
-            {
-                Console.WriteLine("Invalid option.");
-            }
+            while (exitchecker = false);
 
         }
 
         private string DroidMaterial()
         {
             string droidMaterial = "";
-            System.Console.WriteLine("What type of material will the droid be made out of?");
-            System.Console.WriteLine("1. Aluminum");
-            System.Console.WriteLine("2. Gold");
-            System.Console.WriteLine("3. Platinum");
+            Console.WriteLine("What type of material will the droid be made out of?");
+            Console.WriteLine("1. Aluminum");
+            Console.WriteLine("2. Gold");
+            Console.WriteLine("3. Platinum");
             droidMaterial = Console.ReadLine();
 
             if (droidMaterial == "1")
@@ -92,29 +110,37 @@ namespace cis237_assignment_3
         private string DroidColor()
         {
             string droidColor = "";
-            System.Console.WriteLine("What type of material will the droid be made out of?");
-            System.Console.WriteLine("1. Black");
-            System.Console.WriteLine("2. White");
-            System.Console.WriteLine("3. Yellow");
-            droidColor = Console.ReadLine();
-
-            if (droidColor == "1")
+            bool exitchecker = false;
+            Console.WriteLine("What color will the droid be?");
+            Console.WriteLine("1. Black");
+            Console.WriteLine("2. White");
+            Console.WriteLine("3. Yellow");
+            string selection = Console.ReadLine();
+            do
             {
-                return "Black";
+                if (selection == "1")
+                {
+                    exitchecker = true;
+                    droidColor = "Black";
+                }
+                if (selection == "2")
+                {
+                    exitchecker= true;
+                    droidColor = "White";
+                }
+                if (selection == "3")
+                {
+                    exitchecker=!true;
+                    droidColor = "Yellow";
+                }
+                else if(selection != "1" && selection != "2" && selection != "3")
+                { 
+                    Console.WriteLine("Invalid option. Please try again."); 
+                }
+                
             }
-            if (droidColor == "2")
-            {
-                return "White";
-            }
-            if (droidColor == "3")
-            {
-                return "Yellow";
-            }
-            else
-            {
-                Console.WriteLine("Invalid Choice.");
-                return "";
-            }
+            while(exitchecker == false);
+            return droidColor;
 
         }
 

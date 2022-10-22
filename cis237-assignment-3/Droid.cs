@@ -11,7 +11,7 @@ namespace cis237_assignment_3
         protected private string color;
         protected private decimal totalCost;
 
-        public abstract string Material
+        public string Material
         {
             get { return material; }
             set { material = value; }
@@ -24,12 +24,8 @@ namespace cis237_assignment_3
         public decimal TotalCost
         {
             get { return totalCost; }
-            set
-            {
-                if (material == "1")
-
-
-                }
+            set { totalCost = value; }
+       
         }
 
 
