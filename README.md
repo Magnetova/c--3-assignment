@@ -1,7 +1,7 @@
 # Assignment 3 - Inheritance, Abstract Classes, Interfaces, and Polymorphism
 
 ## Author
-
+Cayden Greer
 
 
 ## Description
@@ -132,9 +132,9 @@ It may be beneficial for you to create extra methods within the droid sub classe
 
 ## Outside Resources Used
 
-
+Like 20 different youtube videos about inheritance and polymorphism.
 
 ## Known Problems, Issues, And/Or Errors in the Program
 
-
+Could have done much better at not repeating things. Error catches are buggy and don't work well when creating new droids.
 
