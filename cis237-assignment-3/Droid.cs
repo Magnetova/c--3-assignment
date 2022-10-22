@@ -1,25 +1,17 @@
-﻿namespace cis237_assignment_3
+﻿// Cayden Greer
+// CIS 237 - Fall 2022
+// 10-21-2022
+
+namespace cis237_assignment_3
 {
     abstract class Droid : IDroid
     {
-        //--------------------------
-        // No Constants
-        //VVVVVVVVVVVVVVVVVVVVVVVVVV
+        //Variables: material (string), color (string), totalCost (decimal)
+        protected private string material;
+        protected private string color;
+        protected private decimal totalCost;
 
-        //--------------------------
-        // Variables
-        //VVVVVVVVVVVVVVVVVVVVVVVVVV
-
-        private string material;
-        private string color;
-        private decimal totalCost;
-        private decimal materialCost;
-
-        //--------------------------
-        // Properties
-        //VVVVVVVVVVVVVVVVVVVVVVVVVV
-
-        public string Material
+        public abstract string Material
         {
             get { return material; }
             set { material = value; }
@@ -32,53 +24,16 @@
         public decimal TotalCost
         {
             get { return totalCost; }
-            set { totalCost = materialCost; }
-        }
-        public decimal MaterialCost
-        {
-            get { return materialCost; }
-        }
-
-        //--------------------------
-        // Public Methods
-        //VVVVVVVVVVVVVVVVVVVVVVVVVV
-
-        public override string ToString()
-        {
-            return $"{material} {color} {totalCost}";
-        }
-
-        public decimal CalculateMaterialCost()
-        {
-            if (material == "1")
+            set
             {
-                return 50;
-            }
-            if (material == "2")
-            {
-                return 500;
-            }
-            if (material == "3")
-            {
-                return 750;
-            }
-            else
-            {
-                return 0;
-            }
+                if (material == "1")
+
+
+                }
         }
 
-        public void CalculateTotalCost()
-        {
-            return;
-        }
-        //--------------------------
-        // Protected Methods
-        //VVVVVVVVVVVVVVVVVVVVVVVVVV
 
-        //--------------------------
-        // Constructors
-        //VVVVVVVVVVVVVVVVVVVVVVVVVV
+        //Constructors: 2 parameter constructor (string, string)
 
         public Droid(string Material, string Color)
         {
@@ -86,6 +41,22 @@
             this.color = Color;
         }
 
-        public Droid() { }
+        //Property: TotalCost to return the cost of the droid (Required by the interface)
+
+
+        //Public Methods:
+        // ToString: return a formatted string containing the properties of the droid.
+        public override string ToString()
+        {
+            return $"{material} {color}";
+        }
+
+        // CalculateTotalCost: Required by the interface to calculate and store the total cost.
+
+        public void CalculateTotalCost() { }
+
+        //Protected Methods:
+        //My Choice
+
     }
 }

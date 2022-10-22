@@ -1,4 +1,8 @@
-﻿namespace cis237_assignment_3
+﻿// Cayden Greer
+// CIS 237 - Fall 2022
+// 10-21-2022
+
+namespace cis237_assignment_3
 {
     /// <summary>
     /// You must ensure that your droids are implementing this interface.

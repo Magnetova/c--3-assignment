@@ -1,22 +1,14 @@
-﻿namespace cis237_assignment_3
+﻿// Cayden Greer
+// CIS 237 - Fall 2022
+// 10-21-2022
+
+namespace cis237_assignment_3
 {
     internal class Protocol : Droid
     {
-        //--------------------------
-        // Constants
-        //VVVVVVVVVVVVVVVVVVVVVVVVVV
-
-        const decimal COST_PER_LANGUAGE = 100;
-
-        //--------------------------
-        // Variables
-        //VVVVVVVVVVVVVVVVVVVVVVVVVV
+        //Variables: numberLanguages (int)
 
         private int numberLanguages;
-
-        //--------------------------
-        // Properties
-        //VVVVVVVVVVVVVVVVVVVVVVVVVV
 
         public int NumberLanguages
         {
@@ -24,35 +16,25 @@
             set { numberLanguages = value; }
         }
 
-        //--------------------------
-        // Public Methods
-        //VVVVVVVVVVVVVVVVVVVVVVVVVV
+        //Constant: costPerLanguage
+        const decimal costPerLanguage = 100;
 
-        public override string ToString()
-        {
-            return $"{base.ToString()} {numberLanguages.ToString("C")}";
-        }
-
-        public decimal CalculateTotalCost()
-        {
-            return (numberLanguages * COST_PER_LANGUAGE) + (base.CalculateTotalCost);
-        }
-
-        //--------------------------
-        // Protected Methods
-        //VVVVVVVVVVVVVVVVVVVVVVVVVV
-
-        //--------------------------
-        // Constructors
-        //VVVVVVVVVVVVVVVVVVVVVVVVVV
-
-        public Protocol(
-            string Material,
-            string Color,
-            int NumberLanguages
-            ) : base(Material, Color)
+        //Constructors: 3 parameter constructor (string, string, int)
+        //  Uses the base classs (Droid) constructor
+        public Protocol(string Material, string Color, int NumberLanguages) : base(Material, Color)
         {
             this.numberLanguages = NumberLanguages;
         }
+        public Protocol() { }
+
+        //Public Methods:
+        //  ToString:Return a formatted string containing the variables
+        public override string ToString()
+        {
+            return $"{base.ToString()} {NumberLanguages.ToString("C")}";
+        }
+
+        //  CalculateTotalCost: Calculate the totalCost based on the number of languages and droid type. Then add those values to any      costs that can be calculated by the base class.
+
     }
 }
