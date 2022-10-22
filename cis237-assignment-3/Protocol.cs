@@ -31,7 +31,7 @@ namespace cis237_assignment_3
         //  ToString:Return a formatted string containing the variables
         public override string ToString()
         {
-            return $"{base.ToString()} {NumberLanguages.ToString("C")}";
+            return $"{base.ToString()} {NumberLanguages.ToString()}";
         }
 
         //  CalculateTotalCost: Calculate the totalCost based on the number of languages and droid type. Then add those values to any      costs that can be calculated by the base class.
