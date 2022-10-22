@@ -10,6 +10,7 @@ namespace cis237_assignment_3
         private bool toolbox;
         private bool computerConnection;
         private bool scanner;
+        
 
         public bool Toolbox
         {
@@ -17,7 +18,7 @@ namespace cis237_assignment_3
             set { toolbox = value; }
         }
         public bool ComputerConnection
-        { 
+        {
             get { return computerConnection; }
             set { computerConnection = value; }
         }
@@ -27,6 +28,7 @@ namespace cis237_assignment_3
             set { scanner = value; }
         }
 
+        const decimal COST_OF_UTILITY = 250;
 
         //Constructors: 5 parameter constructor (string, string, bool, bool, bool) 
         //  Uses the base class (Droid) constructor
@@ -42,9 +44,40 @@ namespace cis237_assignment_3
         //  ToString: return a formatted string containing the variables
         public override string ToString()
         {
-            return $"{base.ToString()} {Toolbox} {ComputerConnection} {Scanner}";
+            return $"Droid Type: Utility\n{base.ToString()}\nToolbox: {Toolbox}\nComputer Connection: {ComputerConnection}\nScanner: {Scanner}";
         }
         //  CalculateTotalCost: Calculates totalCost by calculating the cost of each selected option and droid type. Then add those        values to any costs that can be calculated by the base class.
+        public override void CalculateTotalCost()
+        {   
+            decimal materialcost = 0;
+            int additions = 0;
+            if (Toolbox == true)
+            {
+                additions++;
+            }
+            if (ComputerConnection == true)
+            {
+                additions++;
+            }
+            if (Scanner == true)
+            {
+                additions++;
+            }
+            
+            if (Material == "Aluminum")
+            {
+                materialcost = 50;
+            }
+            if (Material == "Gold")
+            {
+                materialcost = 500;
+            }
+            if (Material == "Platinum")
+            {
+                materialcost = 750;
+            }
 
+            TotalCost = materialcost + COST_OF_UTILITY + (additions * 30);
+        }
     }
 }

@@ -2,6 +2,8 @@
 // CIS 237 - Fall 2022
 // 10-21-2022
 
+using System;
+
 namespace cis237_assignment_3
 {
     class Program
@@ -28,6 +30,7 @@ namespace cis237_assignment_3
             DroidCollection droidCollection = new DroidCollection();
             string choice = "";
             choice = ui.PrintMenu();
+            Console.WriteLine("\n\n");
 
 
             while (choice != "3")
@@ -42,11 +45,12 @@ namespace cis237_assignment_3
                     //Print List
                     ui.PrintList(droidCollection);
                 }
-                else if(choice != "1" && choice != "2" && choice != "3")
+                else if (choice != "1" && choice != "2" && choice != "3")
                 {
-                    System.Console.WriteLine("Invalid Choice.");
+                    Console.WriteLine("Invalid option. Please try again.");
                 }
                 choice = ui.PrintMenu();
+                Console.WriteLine("\n\n");
             }
 
         }

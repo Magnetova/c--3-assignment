@@ -21,7 +21,7 @@ namespace cis237_assignment_3
             set { vacuum = value; }
         }
 
-
+        const decimal COST_OF_JANITOR = 300;
         //Constructors: 7 parameter constructor (string, string, bool, bool, bool, bool, bool) 
         //  Uses the base class (Utility) constructor
 
@@ -35,8 +35,48 @@ namespace cis237_assignment_3
         //  ToString: return a formatted string containing the variables
         public override string ToString()
         {
-            return $"{base.ToString()} {Broom} {Vacuum}";
+            return $"Droid Type: Janitor\n{base.ToString()}\nBroom: {Broom}\nVacuum: {Vacuum}";
         }
         //  CalculateTotalCost: Calculate totalCost by calculating the cost of each selected option and droid type. Then add those values  to any costs that can be calculated by the base class.
+        public override void CalculateTotalCost()
+        {
+            decimal materialcost = 0;
+            int additions = 0;
+            if (Toolbox == true)
+            {
+                additions++;
+            }
+            if (ComputerConnection == true)
+            {
+                additions++;
+            }
+            if (Scanner == true)
+            {
+                additions++;
+            }
+            if (Broom == true)
+            {
+                additions++;
+            }
+            if (Vacuum == true)
+            {
+                additions++;
+            }
+
+            if (Material == "Aluminum")
+            {
+                materialcost = 50;
+            }
+            if (Material == "Gold")
+            {
+                materialcost = 500;
+            }
+            if (Material == "Platinum")
+            {
+                materialcost = 750;
+            }
+
+            TotalCost = materialcost + COST_OF_JANITOR + (additions * 30);
+        }
     }
 }

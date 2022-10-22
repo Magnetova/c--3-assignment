@@ -23,6 +23,7 @@ namespace cis237_assignment_3
 
         //Constant: costPerShip
         const decimal COST_PER_SHIP = 250;
+        const decimal COST_OF_ASTROMECH = 350;
         //Constructors: 7 parameter constructor (string, string, bool, bool, bool, bool, int) 
         //  Uses the base class (Utility) constructor
 
@@ -37,8 +38,44 @@ namespace cis237_assignment_3
 
         public override string ToString()
         {
-            return $"{base.ToString()} {Navigation} {NumberOfShips}";
+            return $"Droid Type: Astromech{base.ToString()}/nNavigation: {Navigation}\nNumber of Ships: {NumberOfShips}";
         }
         //  CalculateTotalCost: Calculate totalCost by calculating the cost of each selected option and droid type. Then add those values  to any costs that can be calculated by the base class.
+        public override void CalculateTotalCost()
+        {
+            decimal materialcost = 0;
+            int additions = 0;
+            if (Toolbox == true)
+            {
+                additions++;
+            }
+            if (ComputerConnection == true)
+            {
+                additions++;
+            }
+            if (Scanner == true)
+            {
+                additions++;
+            }
+            if (Navigation == true)
+            {
+                additions++;
+            }
+
+            if (Material == "Aluminum")
+            {
+                materialcost = 50;
+            }
+            if (Material == "Gold")
+            {
+                materialcost = 500;
+            }
+            if (Material == "Platinum")
+            {
+                materialcost = 750;
+            }
+
+            TotalCost = materialcost + COST_OF_ASTROMECH + (additions * 30) + (COST_PER_SHIP * numberOfShips);
+        }
     }
 }

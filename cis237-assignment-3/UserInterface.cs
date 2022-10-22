@@ -21,13 +21,18 @@ namespace cis237_assignment_3
 
             return Console.ReadLine();
 
-          
+
+
         }
 
         public void PrintList(DroidCollection droidCollection)
         {
             //Print the list from the concat string
+            Console.WriteLine("Printing Droid List");
+            Console.WriteLine("--------------------------------");
             Console.WriteLine(droidCollection.CollectionToString());
+            Console.WriteLine("--------------------------------");
+            Console.WriteLine("End of List");
         }
 
         public void AddNewDroid(DroidCollection droidCollection)
@@ -49,7 +54,8 @@ namespace cis237_assignment_3
             {
                 if (droidType != "1" && droidType != "2" && droidType != "3" && droidType != "4")
                 {
-                    Console.WriteLine("Invalid option.");
+                    Console.WriteLine("Invalid option. Please try again.");
+                    Console.WriteLine("\n\n");
                 }
                 else
                 {
@@ -57,24 +63,31 @@ namespace cis237_assignment_3
                     {
                         droidCollection.AddProtocolDroid(DroidMaterial(), DroidColor(), DroidNumberOfLanguages());
                         exitchecker = true;
+                        Console.WriteLine();
                         Console.WriteLine("Protocol Droid Added!\n\n");
                     }
                     if (droidType == "2")
                     {
                         droidCollection.AddUtilityDroid(DroidMaterial(), DroidColor(), DroidToolbox(), DroidComputerConnection(), DroidScanner());
                         exitchecker = true;
+                        Console.WriteLine();
+
                         Console.WriteLine("Utility Droid Added!\n\n");
                     }
                     if (droidType == "3")
                     {
                         droidCollection.AddJanitorDroid(DroidMaterial(), DroidColor(), DroidToolbox(), DroidComputerConnection(), DroidScanner(), DroidBroom(), DroidVacuum());
                         exitchecker = true;
+                        Console.WriteLine();
+
                         Console.WriteLine("Janitor Droid Added!\n\n");
                     }
-                    if(droidType == "4")
+                    if (droidType == "4")
                     {
                         droidCollection.AddAstromechDroid(DroidMaterial(), DroidColor(), DroidToolbox(), DroidComputerConnection(), DroidScanner(), DroidNavigation(), DroidNumberOfShips());
                         exitchecker = true;
+                        Console.WriteLine();
+
                         Console.WriteLine("Astromech Droid Added!\n\n");
                     }
                 }
@@ -85,6 +98,8 @@ namespace cis237_assignment_3
 
         private string DroidMaterial()
         {
+            Console.WriteLine();
+
             string droidMaterial = "";
             Console.WriteLine("What type of material will the Droid be made out of?");
             Console.WriteLine("1. Aluminum");
@@ -107,7 +122,7 @@ namespace cis237_assignment_3
             }
             else
             {
-                Console.WriteLine("Invalid Choice.");
+                Console.WriteLine("Invalid option. Please try again.");
                 return "";
             }
 
@@ -115,6 +130,8 @@ namespace cis237_assignment_3
 
         private string DroidColor()
         {
+            Console.WriteLine();
+
             string droidColor = "";
             bool exitchecker = false;
             Console.WriteLine("What color will the Droid be?");
@@ -133,7 +150,7 @@ namespace cis237_assignment_3
                 }
                 if (selection == "2")
                 {
-                    exitchecker= true;
+                    exitchecker = true;
                     droidColor = "White";
                 }
                 if (selection == "3")
@@ -141,19 +158,21 @@ namespace cis237_assignment_3
                     exitchecker = true;
                     droidColor = "Yellow";
                 }
-                else if(selection != "1" && selection != "2" && selection != "3")
-                { 
-                    Console.WriteLine("Invalid option. Please try again."); 
+                else if (selection != "1" && selection != "2" && selection != "3")
+                {
+                    Console.WriteLine("Invalid option. Please try again.");
                 }
-                
+
             }
-            while(exitchecker == false);
+            while (exitchecker == false);
             return droidColor;
 
         }
 
         private int DroidNumberOfLanguages()
         {
+            Console.WriteLine();
+
             bool exitchecker = false;
             int droidNumberOfLanguages = 0;
             do
@@ -162,11 +181,11 @@ namespace cis237_assignment_3
                 Console.Write("Selection: ");
 
                 droidNumberOfLanguages = int.Parse(Console.ReadLine());
-                if(droidNumberOfLanguages >= 0)
+                if (droidNumberOfLanguages >= 0)
                 {
                     exitchecker = true;
                 }
-                if(droidNumberOfLanguages < 0)
+                if (droidNumberOfLanguages < 0)
                 {
                     Console.WriteLine("Value must be greater than or equal to zero. Please try again.");
                 }
@@ -179,6 +198,8 @@ namespace cis237_assignment_3
 
         private bool DroidToolbox()
         {
+            Console.WriteLine();
+
             bool exitchecker = false;
             bool toolbox = false;
             Console.WriteLine("Will the Droid have a toolbox?");
@@ -198,7 +219,7 @@ namespace cis237_assignment_3
                 {
                     exitchecker = true;
                 }
-                else if(exitchecker == false)
+                else if (exitchecker == false)
                 {
                     Console.WriteLine("Invalid option. Please try again.");
                 }
@@ -212,6 +233,8 @@ namespace cis237_assignment_3
 
         private bool DroidComputerConnection()
         {
+            Console.WriteLine();
+
             bool exitchecker = false;
             bool computerConnection = false;
             Console.WriteLine("Will the Droid have a computer connection?");
@@ -244,6 +267,8 @@ namespace cis237_assignment_3
 
         private bool DroidScanner()
         {
+            Console.WriteLine();
+
             bool exitchecker = false;
             bool scanner = false;
             Console.WriteLine("Will the Droid have a scanner?");
@@ -276,6 +301,8 @@ namespace cis237_assignment_3
 
         private bool DroidBroom()
         {
+            Console.WriteLine();
+
             bool exitchecker = false;
             bool broom = false;
             Console.WriteLine("Will the Droid have a broom?");
@@ -308,6 +335,8 @@ namespace cis237_assignment_3
 
         private bool DroidVacuum()
         {
+            Console.WriteLine();
+
             bool exitchecker = false;
             bool vacuum = false;
             Console.WriteLine("Will the Droid have a vacuum?");
@@ -340,6 +369,8 @@ namespace cis237_assignment_3
 
         private bool DroidNavigation()
         {
+            Console.WriteLine();
+
             bool exitchecker = false;
             bool navigation = false;
             Console.WriteLine("Will the Droid have navigation?");
@@ -372,6 +403,8 @@ namespace cis237_assignment_3
 
         private int DroidNumberOfShips()
         {
+            Console.WriteLine();
+
             bool exitchecker = false;
             int droidNumberOfShips = 0;
             do
@@ -380,11 +413,11 @@ namespace cis237_assignment_3
                 Console.Write("Selection: ");
 
                 droidNumberOfShips = int.Parse(Console.ReadLine());
-                if(droidNumberOfShips >= 0)
+                if (droidNumberOfShips >= 0)
                 {
-                    exitchecker=true;
+                    exitchecker = true;
                 }
-                if(droidNumberOfShips < 0)
+                if (droidNumberOfShips < 0)
                 {
                     Console.WriteLine("Value must be greater than or equal to zero. Please try again.");
                 }

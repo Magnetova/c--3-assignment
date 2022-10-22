@@ -21,11 +21,11 @@ namespace cis237_assignment_3
             get { return color; }
             set { color = value; }
         }
-        public decimal TotalCost
+        public virtual decimal TotalCost
         {
             get { return totalCost; }
             set { totalCost = value; }
-       
+
         }
 
 
@@ -37,22 +37,23 @@ namespace cis237_assignment_3
             this.color = Color;
         }
 
-        //Property: TotalCost to return the cost of the droid (Required by the interface)
-
 
         //Public Methods:
         // ToString: return a formatted string containing the properties of the droid.
         public override string ToString()
         {
-            return $"{material} {color}";
+            return $"Material: {Material}\nColor: {Color}";
         }
 
         // CalculateTotalCost: Required by the interface to calculate and store the total cost.
 
-        public void CalculateTotalCost() { }
+        public virtual void CalculateTotalCost() 
+        {
+        }
 
         //Protected Methods:
         //My Choice
+
 
     }
 }

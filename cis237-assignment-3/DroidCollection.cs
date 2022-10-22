@@ -12,9 +12,9 @@ namespace cis237_assignment_3
 
         private int NextAvailableSpot()
         {
-            for(int i = 0; i < droids.Length; i++)
+            for (int i = 0; i < droids.Length; i++)
             {
-                if(droids[i] == null)
+                if (droids[i] == null)
                 {
                     return i;
                 }
@@ -61,11 +61,13 @@ namespace cis237_assignment_3
 
             foreach (Droid droid in droids)
             {
-                if(droid != null)
+                if (droid != null)
                 {
-                    outputString += droid.ToString() + Environment.NewLine;
+                    droid.CalculateTotalCost();
+                    outputString += "\n" + droid.ToString() + "\nTotal Cost: " + droid.TotalCost + " credits" + "\n"+Environment.NewLine;
                 }
             }
+            
             return outputString;
         }
     }
